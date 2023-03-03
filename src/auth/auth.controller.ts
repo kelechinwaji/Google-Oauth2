@@ -9,4 +9,10 @@ export class AuthController {
        return {msg: 'Google Authentication'}
     }
 
+    // api/auth/google/redirect
+    @Get('google/redirect')
+    handleRedirect(){
+        return {msg: 'OK'}
+    }
+
 }
