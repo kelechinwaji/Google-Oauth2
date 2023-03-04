@@ -13,6 +13,7 @@ import { AuthModule } from './auth/auth.module';
     password: 'admin04',
     database: 'grit',
     entities: [],
+    synchronize: true,
   })],
   controllers: [AppController],
   providers: [AppService],
