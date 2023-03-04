@@ -7,7 +7,8 @@ export class AuthService {
     constructor(@InjectRepository(User) private readonly userRepository: Repository<User>){}
 
     validateUser(details: UserDetails){
-      
+        console.log('AuthService');
+        console.log(details);
         
     }
 }
