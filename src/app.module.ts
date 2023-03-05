@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -15,7 +16,9 @@ import { User } from './TypeOrm/entities/user';
     database: 'grit',
     entities: [User],
     synchronize: true,
-  })],
+  }),
+  PassportModule.register({session: true}),
+],
   controllers: [AppController],
   providers: [AppService],
 })
