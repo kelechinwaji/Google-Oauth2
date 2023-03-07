@@ -12,6 +12,11 @@ import { AuthService } from "../auth.service";
     }
 
     serializeUser(user: User, done: Function) {
-        done(null, user)
+        done(null, user);
+    }
+
+    async deserializeUser(payload: any, done: Function) {
+      const user = await this.authService.findUser(payload.id);
+      return user ? done(null, user) : done(null, null);  
     }
  }
