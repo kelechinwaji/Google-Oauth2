@@ -18,4 +18,11 @@ export class AuthService {
         
         
     }
+
+    async findUser(id: number){
+         const user = await this.userRepository.findOneBy({id});
+         return user;
+    }
+
+
 }
