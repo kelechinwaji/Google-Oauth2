@@ -8,7 +8,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.use(
     session({
-      secret: "amksdclkmewiewfwedmklwek",
+      secret: process.env.SECRET,
       saveUninitialized: false,
       resave: false,
       cookie: {
