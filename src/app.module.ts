@@ -9,11 +9,11 @@ import { User } from './TypeOrm/entities/user';
 @Module({
   imports: [AuthModule, TypeOrmModule.forRoot({
     type: 'postgres',
-    host: 'localhost',
+    host: process.env.HOST,
     port: 5432,
     username: process.env.USERNAME,
     password: process.env.PASSWORD,
-    database: 'grit',
+    database: process.env.DATABASE,
     entities: [User],
     synchronize: true,
   }),
